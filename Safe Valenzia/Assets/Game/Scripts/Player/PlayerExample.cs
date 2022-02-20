@@ -20,7 +20,7 @@ public class PlayerExample : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 dir = mainUnput.Player.move.ReadValue<Vector2>().normalized;
+        Vector2 dir = mainUnput.Player.move.ReadValue<Vector2>();
     }
 
     void OnEnable()
