@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 565267019
+    locked: 0
+  - name: Path
+    uniqueID: 3578978161
+    locked: 0
+  - name: Player
+    uniqueID: 2884735107
+    locked: 0
+  - name: Forground
+    uniqueID: 515078281
+    locked: 0
