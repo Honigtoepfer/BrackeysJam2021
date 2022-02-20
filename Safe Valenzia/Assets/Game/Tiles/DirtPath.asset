@@ -242,7 +242,7 @@ MonoBehaviour:
     - {x: -1, y: -1, z: 0}
     - {x: 1, y: 1, z: 0}
     m_RuleTransform: 0
-  - m_Id: 0
+  - m_Id: 12
     m_Sprites:
     - {fileID: -4824794370392854769, guid: 95d92b2e7f7036043a3b677e50b0b633, type: 3}
     m_GameObject: {fileID: 0}
