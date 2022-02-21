@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     MainInput mainInput;
     MovementController controller;
+    Interactions interactions;
 
     [SerializeField]
     float speed;
@@ -12,8 +13,7 @@ public class Player : MonoBehaviour
     {
         mainInput = new MainInput();
         controller = new MovementController(this.gameObject, speed, mainInput);
-
-        mainInput.Player.interaction.started += ContextMenu => Interaction();
+        interactions = new Interactions(this.gameObject, mainInput);
     }
 
     void OnEnable()
@@ -26,13 +26,19 @@ public class Player : MonoBehaviour
         mainInput.Disable();
     }
 
-    void Interaction()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Interaction");
+        interactions.CollisionEnter(collision);    
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        interactions.CollisionExit(collision);
     }
 
     void Update()
     {
         controller.Process();
+        interactions.Process();
     }
 }
