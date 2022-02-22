@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour, IInteractable
 {
+    public static event System.Action<DialogueConversation> OnStartDialogue;
+
     [SerializeField]
     DialogueConversation conversation;
 
@@ -14,7 +16,7 @@ public class NPC : MonoBehaviour, IInteractable
     {
         print("npc interact()");
 
-        conversation.StartDialogue();
+        OnStartDialogue(conversation);
     }
 
     public void Enter()
