@@ -8,4 +8,9 @@ public class DialogueConversation : ScriptableObject
 
     [TextArea(3, 10)]
     public string[] sentences;
+
+    public void StartDialogue()
+    {
+
+    }
 }

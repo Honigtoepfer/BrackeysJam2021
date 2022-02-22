@@ -13,6 +13,8 @@ public class NPC : MonoBehaviour, IInteractable
     public void Interact()
     {
         print("npc interact()");
+
+        conversation.StartDialogue();
     }
 
     public void Enter()
