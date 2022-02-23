@@ -8,11 +8,21 @@ public class ActivateGObyOKey : MonoBehaviour
     [SerializeField] private GameObject key;
     [SerializeField] private GameObject obj;
     [SerializeField] private GameObject[] Lights;
+    [SerializeField] private bool reverse = false;
+    [SerializeField] private OpenDoorButton openDoorButton;
 
     void Start()
     {
         Lights[1].SetActive(false);
         Lights[0].SetActive(true);
+        if(!reverse)
+        {
+            obj.SetActive(true);
+        }
+        else
+        {
+            obj.SetActive(false);
+        }
     }
 
 
@@ -20,9 +30,16 @@ public class ActivateGObyOKey : MonoBehaviour
     {
         if(col.gameObject == key)
         {
-            obj.SetActive(false);
             Lights[0].SetActive(false);
             Lights[1].SetActive(true);
+
+            if(openDoorButton != null)
+                if(openDoorButton.pressed)
+                    return;
+            if(!reverse)
+                obj.SetActive(false);
+            else
+                obj.SetActive(true);
         }
     }
 
@@ -30,9 +47,16 @@ public class ActivateGObyOKey : MonoBehaviour
     {
         if(col.gameObject == key)
         {
-            obj.SetActive(true);
             Lights[1].SetActive(false);
             Lights[0].SetActive(true);
+
+            if(openDoorButton != null)
+                if(openDoorButton.pressed)
+                    return;
+            if(!reverse)
+                obj.SetActive(true);
+            else
+                obj.SetActive(false);
         }
     }
 
